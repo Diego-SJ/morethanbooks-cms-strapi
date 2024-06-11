@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eventos",
+  "info": {
+    "singularName": "evento",
+    "pluralName": "eventos",
+    "displayName": "Eventos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string",
+      "required": true
+    },
+    "Fecha": {
+      "type": "datetime",
+      "required": true
+    },
+    "autore": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::autore.autore",
+      "inversedBy": "eventos"
+    },
+    "Ubicacion": {
+      "type": "string",
+      "required": true
+    },
+    "Contenido": {
+      "type": "richtext",
+      "required": true
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoria.categoria",
+      "inversedBy": "eventos"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "price": {
+      "type": "decimal",
+      "min": 0
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Nombre",
+      "required": true
+    }
+  }
+}

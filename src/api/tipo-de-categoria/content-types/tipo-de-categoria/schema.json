@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipo_de_categorias",
+  "info": {
+    "singularName": "tipo-de-categoria",
+    "pluralName": "tipo-de-categorias",
+    "displayName": "Tipo de categoria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria.categoria",
+      "mappedBy": "Tipo"
+    }
+  }
+}
